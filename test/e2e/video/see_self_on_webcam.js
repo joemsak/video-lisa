@@ -1,9 +1,11 @@
 'use strict';
 
 describe('Seeing yourself on the webcam', function() {
+  browser.get('index.html');
+
   it('uses the video tag', function() {
-    browser.get('index.html');
-    expect(element).not.toBe(undefined);
+    var video = $('video.webcam-live');
+    expect(video).toBeDefined();
   });
 });
 
