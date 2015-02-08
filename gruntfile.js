@@ -41,8 +41,8 @@ module.exports = function (grunt) {
         }
       },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
+        files: ['test/spec/{,*/}*.js', 'test/e2e/{,*}/*.js'],
+        tasks: ['newer:jshint:test', 'karma', 'protractor:run']
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -406,10 +406,19 @@ module.exports = function (grunt) {
       }
     },
 
+    protractor_webdriver: {
+      start: {
+        options: {
+          path: 'node_modules/protractor/bin/',
+          command: 'webdriver-manager start'
+        }
+      }
+    },
+
     protractor: {
       options: {
         keepAlive: true,
-        configFile: "protractor.conf.js"
+        configFile: 'protractor.conf.js'
       },
       run: {}
     }
@@ -436,6 +445,7 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
+  grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-protractor-runner');
 
   grunt.registerTask('test', [
@@ -445,6 +455,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'connect:test',
     'karma',
+    'protractor_webdriver',
     'protractor:run'
   ]);
 
