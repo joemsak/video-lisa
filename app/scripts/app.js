@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name videolisaApp
+ * @name videoLisaApp
  * @description
- * # videolisaApp
+ * # videoLisaApp
  *
  * Main module of the application.
  */
 angular
-  .module('videolisaApp', [
+  .module('videoLisaApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

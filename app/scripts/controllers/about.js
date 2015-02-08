@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name videolisaApp.controller:AboutCtrl
+ * @name videoLisaApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the videolisaApp
+ * Controller of the videoLisaApp
  */
-angular.module('videolisaApp')
+angular.module('videoLisaApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
