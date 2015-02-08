@@ -1,0 +1,6 @@
+{
+    "db": "mongodb://localhost/mean-dev",
+    "app": {
+        "name": "videoLisa - Video with Lisa Tao - Development"
+    }
+}
